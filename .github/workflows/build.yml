@@ -1,0 +1,19 @@
+name: GitHub Actions Demo
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: thedoctor0/zip-release@master
+      with:
+        type: 'zip'
+        filename: 'release.zip'
+        exclusions: '*.git* *.github* *LICENSE*'
+    - name: upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: release
+        path: release.zip
