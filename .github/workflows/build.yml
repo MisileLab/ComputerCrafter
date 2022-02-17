@@ -11,9 +11,7 @@ jobs:
       with:
         type: 'zip'
         filename: 'release.zip'
-        exclusions: '*.git* *.github* *LICENSE*'
-        path: 'mods/*'
-        directory: '../'
+        exclusions: '.git* .github *.md'
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
