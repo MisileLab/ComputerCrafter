@@ -6,14 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Archive Release
-      uses: thedoctor0/zip-release@master
-      with:
-        type: 'zip'
-        filename: 'release.zip'
-        exclusions: '/*.git*/ /*.github*/ *.md'
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: release
-        path: release.zip
+        name: ComputerCraft
+        path: mods
